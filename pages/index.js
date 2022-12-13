@@ -18,7 +18,7 @@ export default function Home() {
           {allProducts.map((product) => {
             return (
               <div className={styles.product_card} key={product.id}>
-                <Link legacyBehavior href={`products/${product.slug}`}>
+                <Link legacyBehavior href={`products/${product.id}`}>
                   <a>
                     <div className={styles.product_img}>
                       <img src={product.image.url} alt={product.name} />
