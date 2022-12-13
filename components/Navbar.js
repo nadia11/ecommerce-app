@@ -1,5 +1,5 @@
 import Link from 'next/link';
-
+import Router from 'next/router'
 import styles from '../styles/components/Navbar.module.css';
 
 const Navbar = () => {
@@ -17,7 +17,9 @@ const Navbar = () => {
       <div className={styles.nav_price}>
         <span>🛒</span>
         <p>$0.00</p>
+        <button className={'btn'} onClick={()=>{Router.push('/')}}>Logout</button>
       </div>
+
     </nav>
   );
 };

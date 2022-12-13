@@ -31,7 +31,9 @@ const singleproduct = () => {
           </div>
           <button
 
-            className="btn">Add to cart 🛒</button>
+            className="btn" onClick={ ()=>{if (typeof window !== 'undefined') {
+            localStorage.setItem('usersName', selectedProduct?.id)
+          }}}>Add to cart 🛒</button>
         </div>
       </div>
     </>
