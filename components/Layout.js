@@ -1,9 +1,13 @@
 import Navbar from './Navbar.js';
 import Footer from './Footer';
+import {useRouter} from 'next/router';
+
 const Layout = ({ children }) => {
+  const router = useRouter();
+  const showHeader = router.pathname === '/' ? false : true;
   return (
     <div>
-      <Navbar />
+      {showHeader && <Navbar />}
       {children}
       <Footer />
     </div>

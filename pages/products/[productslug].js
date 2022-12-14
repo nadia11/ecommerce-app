@@ -29,11 +29,12 @@ const singleproduct = () => {
               explicabo facere laboriosam eius.
             </p>
           </div>
-          <button
-
-            className="btn" onClick={ ()=>{if (typeof window !== 'undefined') {
-            localStorage.setItem('usersName', selectedProduct?.id)
-          }}}>Add to cart 🛒</button>
+          <button className="btn snipcart-add-item"
+                  data-item-id={selectedProduct.id}
+                  data-item-price={selectedProduct.price}
+                  data-item-url={`products/${selectedProduct.slug}`}
+                  data-item-image={selectedProduct.image.url}
+                  data-item-name={selectedProduct.name} >Add to cart 🛒</button>
         </div>
       </div>
     </>

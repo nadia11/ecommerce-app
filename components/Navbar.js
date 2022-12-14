@@ -1,24 +1,34 @@
 import Link from 'next/link';
 import Router from 'next/router'
 import styles from '../styles/components/Navbar.module.css';
+import { useEffect } from "react";
 
 const Navbar = () => {
+  let user;
+  useEffect(() => {
+    user=localStorage.getItem("user")
+  }, [])
+
+
   return (
     <nav className={styles.navbar}>
       <Link legacyBehavior href="/">
         <a>
           <div className={styles.logo}>
-            <p>
+            <div>
               PLANTS <span className={styles.logo_span}>☘</span>
-            </p>
+            </div>
           </div>
         </a>
       </Link>
-      <div className={styles.nav_price}>
+      <h3>HELLO!!! {user}</h3>
+      <div className="nav-price snipcart-checkout">
         <span>🛒</span>
-        <p>$0.00</p>
-        <button className={'btn'} onClick={()=>{Router.push('/')}}>Logout</button>
+        <div className="snipcart-total-price">$0.00</div>
+
       </div>
+
+      <button  onClick={()=>{Router.push('/')}}>Logout</button>
 
     </nav>
   );
